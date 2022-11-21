@@ -1,0 +1,21 @@
+logo_image: "/images/casparcg_logo.png" # You can add own logo. For example '/images/logo.png'.
+
+menu__settings:
+  menu__items:
+    - title: "Home"
+      url: "/"
+    - title: "Downloads"
+      url: "/downloads/"
+      # submenu:
+      # - url: '/about/'
+      #   title: 'About'
+      # - url: '/elements/'
+      #   title: 'Elements'
+    - title: "Github"
+      url: "https://github.com/CasparCG"
+    - title: "Beta builds"
+      url: "/downloads/"
+    - title: "Wiki"
+      url: "https://github.com/CasparCG/help/wiki"
+    - title: "Community forum"
+      url: "https://casparcgforum.com"
