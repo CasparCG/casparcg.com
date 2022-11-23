@@ -31,14 +31,17 @@ collections:
   pages:
     output: true
     permalink: /:title/
-  projects:
+  # projects:
+  #   output: true
+  #   permalink: /project/:slug
+  # testimonials:
+  #   output: false
+  # posts:
+  #   output: true
+  #   permalink: /blog/:slug
+  downloads:
     output: true
-    permalink: /project/:slug
-  testimonials:
-    output: false
-  posts:
-    output: true
-    permalink: /blog/:slug
+    permalink: /download/:slug
 
 cloudcannon:
   collections:
@@ -85,6 +88,10 @@ defaults:
       type: posts
     values:
       layout: post
+  - scope:
+      type: downloads
+    values:
+      layout: downloads
 
 # Tags
 tag_page_dir: tag

@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="post-top">
+  <div class="container">
+    <div class="row">
+
+      <div class="col col-6 col-d-12">
+        <div class="post__info">
+
+          <h1 class="post__title">{{ page.title | escape }}</h1>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- begin post -->
+<div class="container animate">
+
+  <article class="post">
+
+    <div class="post__content">
+      {{ content }}
+    </div>
+
+  </article>
+</div>
+<!-- end post -->
