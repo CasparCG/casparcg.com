@@ -27,13 +27,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+      - name: Setting up Node
+        uses: actions/setup-node@v3
         with:
-          source: ./
-          destination: ./_site
+          node-version: "16"
+          cache: "npm"
+      - run: npm ci
+      - name: Setting up Ruby
+        uses: actions/setup-ruby@v1
+        with: { ruby-version: "3.1.2" }
+      - name: Caching Gems
+        uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: Jekyll install
+        run: npm run install-jekyll
+        env:
+          NODE_ENV: production
+      - run: BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll build  --source site --trace
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 
