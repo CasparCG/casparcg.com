@@ -34,7 +34,7 @@ jobs:
           cache: "npm"
       - run: npm ci
       - name: Setting up Ruby
-        uses: ruby/setup-ruby@v1@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: "2.7.0"
       - name: Caching Gems
