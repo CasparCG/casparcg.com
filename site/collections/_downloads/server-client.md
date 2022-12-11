@@ -8,7 +8,7 @@ Unless specifically stated, all files are released under the [**GPLv3 or higher*
 
 [Find the latest releases on Github](https://github.com/casparcg/server/releases)
 
-The latest stable version is 2.3.3 LTS:
+The latest stable version is **CasparCG Server 2.3.3 LTS**
 
 - [CasparCG 2.3.3 LTS (Windows)](https://github.com/CasparCG/server/releases/download/v2.3.3-lts-stable/casparcg-server-v2.3.3-lts-stable.zip)
 - [CasparCG 2.0.7.2 - Flash EOL Hotfix (Windows)](https://github.com/CasparCG/server/releases/download/v2.0.7.1-flash-eol/CasparCG.Server-2.0.7.2-flash-eol-hotfix.zip) (Legacy)
