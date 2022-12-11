@@ -12,7 +12,7 @@ footer_menu__settings:
     - title: "Github"
       url: "https://github.com/CasparCG"
     - title: "Beta builds"
-      url: "/downloads/"
+      url: "/download/server-client"
     - title: "Wiki"
       url: "https://github.com/CasparCG/help/wiki"
     - title: "Community forum"
