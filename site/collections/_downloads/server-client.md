@@ -1,5 +1,5 @@
 ---
-title: CasparCG Downloads
+title: Downloads
 ---
 
 # CasparCG Server
