@@ -11,5 +11,5 @@ A _Windows_ and _Linux_ software is used to play out and record video, audio and
 # CasparCG Clients
 A client software is needed in order to control one or several CasparCG&nbsp;Servers.
 - Official [_CasparCG&nbsp;Client_](https://github.com/CasparCG/client/releases/) 
-- SuperConductor
+- [_SuperConductor_](https://github.com/SuperFlyTV/SuperConductor/releases)
 
