@@ -1,0 +1,35 @@
+name: Node CI
+
+on:
+  push:
+    branches:
+      - "docusaurus"
+
+jobs:
+  publish-docs:
+    name: Publish Docs
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ".node-version"
+      - name: Prepare Environment
+        run: |
+          npm install
+        env:
+          CI: true
+      - name: Run docusaurus
+        run: |
+          npm run build
+        env:
+          CI: true
+      - name: Publish
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
