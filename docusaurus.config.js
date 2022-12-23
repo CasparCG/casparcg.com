@@ -102,7 +102,7 @@ const config = {
             items: [
               {
                 label: "Downloads",
-                to: "/downloads",
+                to: "/docs/downloads/server-client",
               },
               {
                 label: "Wiki",
@@ -131,8 +131,8 @@ const config = {
             title: "More",
             items: [
               {
-                label: "Blog",
-                to: "/blog",
+                label: "Beta builds",
+                href: "https://casparcg.com/builds",
               },
               {
                 label: "GitHub",
