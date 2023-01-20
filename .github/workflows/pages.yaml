@@ -29,9 +29,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16.x"
+          cache: "npm"
       - name: Prepare Environment
         run: |
-          npm install
+          npm ci
         env:
           CI: true
       - name: Run docusaurus
