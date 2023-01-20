@@ -24,7 +24,11 @@ const FeatureList = [
     title: "Flexible engine",
     Svg: require("@site/static/img/undraw_animating_re_5gvn.svg").default,
     description: (
-      <>The most extendable engine for live real-time broadcast use to date</>
+      <>
+        The most extendable engine for live real-time broadcast use to date
+        featuring a layer based compositor and an open network protocol with
+        many free controllers already available
+      </>
     ),
   },
 ];
