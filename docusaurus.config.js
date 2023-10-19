@@ -38,7 +38,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/casparcg/casparcg.github.io/tree/docusaurus/docs/",
+            "https://github.com/casparcg/casparcg.github.io/tree/docusaurus/",
         },
         blog: {
           showReadingTime: true,
@@ -115,7 +115,7 @@ const config = {
             items: [
               {
                 label: "Forum",
-                href: "https://casparcgforum.com",
+                href: "https://casparcgforum.org",
               },
               {
                 label: "Twitter",
