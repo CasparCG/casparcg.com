@@ -83,4 +83,5 @@ jobs:
           private-ssh-key: ${{secrets.DEPLOY_SSH_KEY}}
           destination-path: ${{secrets.DEPLOY_PATH}}
           source-path: build/
+          rsync-options: --archive --verbose --compress --human-readable --progress --delete-after --exclude=.git* --exclude=.git/ --exclude=README.md --exclude=readme.md --exclude=.gitignore --dry-run
 
