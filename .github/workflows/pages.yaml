@@ -76,22 +76,11 @@ jobs:
         with:
           name: docusaurus
       - name: Upload
-        shell: bash
-        run: |
-          if [ -z "$SSH_KEY" ] || [ -z "$SSH_HOST" ] || [ -z "$SSH_USERNAME" ] || [ -z "$DEPLOY_PATH" ]; then
-            echo "Missing deploy credentials"
-          else
-            # install ssh key
-            mkdir ~/.ssh
-            echo "$SSH_KEY" >> ~/.ssh/id_rsa
-            chmod -R 600 ~/.ssh 
-
-            # perform copy
-            rsync -avvz build/ $SSH_USERNAME@$SSH_HOST:$DEPLOY_PATH
-          fi
-        env:
-          SSH_KEY : ${{secrets.DEPLOY_SSH_KEY}}
-          SSH_HOST : ${{secrets.DEPLOY_SSH_HOST}}
-          SSH_USERNAME : ${{secrets.DEPLOY_SSH_USERNAME}}
-          DEPLOY_PATH : ${{secrets.DEPLOY_PATH}}
+        uses: SamKirkland/web-deploy@v1
+        with:
+          target-server: ${{secrets.DEPLOY_SSH_HOST}}
+          remote-user: ${{secrets.DEPLOY_SSH_USERNAME}}
+          private-ssh-key: ${{secrets.DEPLOY_SSH_KEY}}
+          destination-path: ${{secrets.DEPLOY_PATH}}
+          source-path: build/
 
