@@ -75,6 +75,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: docusaurus
+          path: build
       - name: Prepare Environment
         run: |
           pwd
