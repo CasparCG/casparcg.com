@@ -41,9 +41,14 @@ jobs:
           npm run build
         env:
           CI: true
-      - name: Upload artifact
+      - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v1
         with:
+          path: "./build"
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: docusaurus
           path: "./build"
 
   # Deployment job
@@ -58,3 +63,31 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+
+  # Deployment job
+  deploy-ssh:
+    name: Deploy to 
+    environment:
+      name: casparcg.com
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: docusaurus
+      - name: Upload
+        shell: bash
+        run: |
+          if [ -z "$SSH_KEY" ] || [ -z "$SSH_HOST" ] || [ -z "$SSH_USERNAME" ] || [ -z "$DEPLOY_PATH" ]; then
+            echo "Missing deploy credentials"
+          else
+
+          echo "$SSH_KEY" >> ~/.ssh/id_rsa
+
+          rsync -avvz build/ $SSH_USERNAME@$SSH_HOST:$DEPLOY_PATH
+        env:
+          SSH_KEY : ${{secrets.DEPLOY_SSH_KEY}}
+          SSH_HOST : ${{secrets.DEPLOY_SSH_HOST}}
+          SSH_USERNAME : ${{secrets.DEPLOY_SSH_USERNAME}}
+          DEPLOY_PATH : ${{secrets.DEPLOY_PATH}}
+
