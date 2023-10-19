@@ -84,7 +84,7 @@ jobs:
             # install ssh key
             mkdir ~/.ssh
             echo "$SSH_KEY" >> ~/.ssh/id_rsa
-            chmod -R 600 .ssh 
+            chmod -R 600 ~/.ssh 
 
             # perform copy
             rsync -avvz build/ $SSH_USERNAME@$SSH_HOST:$DEPLOY_PATH
