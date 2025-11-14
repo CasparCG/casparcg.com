@@ -4,6 +4,8 @@ sidebar_label: Others
 sidebar_position: 2
 ---
 
+# Other downloads and tools
+
 Unless specifically stated, all files are released under the [**GPLv3 or higher**](http://www.gnu.org/licenses/licenses.html#GPL) license.
 
 # Download Template Generator

@@ -4,6 +4,8 @@ sidebar_label: Developer tools
 sidebar_position: 1
 ---
 
+# Developer tools
+
 These are various community maintained tools and libraries to integrate with CasparCG.
 
 
