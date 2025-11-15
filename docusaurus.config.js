@@ -41,13 +41,6 @@ const config = {
           editUrl:
             "https://github.com/casparcg/casparcg.com/tree/main/",
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -70,6 +63,12 @@ const config = {
             docId: "downloads/server-client",
             position: "left",
             label: "Downloads",
+          },
+          {
+            type: "doc",
+            docId: "guides/index",
+            position: "left",
+            label: "Guides",
           },
           {
             href: "https://casparcgforum.org",
@@ -104,6 +103,10 @@ const config = {
               {
                 label: "Downloads",
                 to: "/docs/downloads/server-client",
+              },
+              {
+                label: "Guides",
+                to: "/docs/guides",
               },
               {
                 label: "Wiki",
