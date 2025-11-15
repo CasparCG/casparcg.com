@@ -41,7 +41,7 @@ jobs:
         env:
           CI: true
       - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v4
         with:
           path: "./build"
       - name: Upload artifact
