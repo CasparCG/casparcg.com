@@ -72,7 +72,7 @@ jobs:
           source-path: build/
           rsync-options: -avvz
       - name: Trigger cache-purge
-        uses: appleboy/ssh-action@v1.0.0
+        uses: appleboy/ssh-action@v1.2.3
         with:
           host: ${{secrets.DEPLOY_SSH_HOST}}
           username: ${{secrets.DEPLOY_SSH_USERNAME}}
