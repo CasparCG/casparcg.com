@@ -20,13 +20,13 @@ Please contribute any tips or improvements you may have
 
 1) Install Ubuntu 24.04 on your machine. You can choose the minimal install, and perform disk and other setup as you wish.
 
-2) Ensure the system is fully updated
+2) Ensure the system is fully updated  
   `sudo apt update && sudo apt upgrade`
 
-3) Install nvidia drivers
+3) Install nvidia drivers  
   `apt install nvidia-driver-570-server`
 
-4) Install some common tools
+4) Install some common tools  
   `apt install wget nano`
 
 ## Install Decklink drivers
