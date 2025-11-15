@@ -45,7 +45,7 @@ jobs:
         with:
           path: "./build"
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v5
         with:
           name: docusaurus
           path: "./build"
