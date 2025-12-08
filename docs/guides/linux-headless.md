@@ -6,7 +6,7 @@ sidebar_position: 1
 
 :::note
 This has been written and tested on Ubuntu 24.04, but should be translatable to other ubuntu/debian based distributions with little effort.  
-It require CasparCG 2.5.0 or later, earlier versions do not support running without a x11 server.
+It requires CasparCG 2.5.0 or later, earlier versions do not support running without a x11 server.
 :::
 
 The aim of this, is to setup a server to run CasparCG on startup, without needing any manual intervention or login or user session.
@@ -82,7 +82,7 @@ Multiple of these can be installed at once, each provides a binary named the sam
 The exact path of the configuration is not too important, but you need to make sure that everywhere references the same. For simplicity, we shall do so under `/opt/casparcg`. You are free to put it elsewhere or split it up like is possible on windows.
 
 1) Create a system user to run casparcg as  
-  `sudo adduser casparcg --system --no-create-home`
+  `sudo adduser casparcg --system --home=/opt/casparcg`
 
 2) Create configuration directory  
   `sudo mkdir /opt/casparcg && sudo chown casparcg /opt/casparcg`
@@ -97,7 +97,7 @@ The exact path of the configuration is not too important, but you need to make s
 ### Setup autostart
 
 1) Create scanner config  
-  `sudo nano nano etc/systemd/system/casparcg-scanner.service`  
+  `sudo nano /etc/systemd/system/casparcg-scanner.service`  
   With the content:
     ```
     [Unit]
@@ -115,7 +115,7 @@ The exact path of the configuration is not too important, but you need to make s
     ```
 
 2) Create server config  
-  `sudo nano nano etc/systemd/system/casparcg-server.service`  
+  `sudo nano /etc/systemd/system/casparcg-server.service`  
   With the content:
     ```
     [Unit]
@@ -130,6 +130,7 @@ The exact path of the configuration is not too important, but you need to make s
     WorkingDirectory=/opt/casparcg         
     ExecStart=/usr/bin/casparcg-server-beta
     Restart=on-failure
+    RestartForceExitStatus=5
 
     [Install]
     WantedBy=multi-user.target
