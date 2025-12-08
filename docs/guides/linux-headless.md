@@ -157,6 +157,33 @@ If using CEF/HTML, you will likely want to enable gpu mode and setup a cache pat
 </html>
 ```
 
+## Installing NDI
+
+The paths here are used for some simple steps, you are of course free to use any other path you wish.
+
+1) Download the [NDI SDK](https://ndi.video/for-developers/ndi-sdk/download/)  
+   Unfortonately they do not provide a redistributable version, and we cannot distribute the needed files while retaining compliance with the GPL.
+
+2) Extract the archive  
+   `tar zvxf Install_NDI_SDK_v6_Linux.tar.gz`  
+   `./Install_NDI_SDK_v6_Linux.sh`  
+   Follow the prompt to accept the license terms
+
+3) Copy the needed files to a permanent location  
+   `sudo cp -P NDI SDK for Linux/lib/x86_64-linux-gnu/ /opt/ndi-lib`  
+   Change the owner
+   `sudo chown -R root:root /opt/ndi-lib`
+
+4) Update the CasparCG systemd unit. Add the following line above the `WorkingDirectory=...` line
+   `Environment="NDI_RUNTIME_DIR_V6=/opt/ndi-lib"`
+   
+5) (Optional) Update your CasparCG config to enable the ndi auto-load option:
+   ```
+   <ndi>
+     <auto-load>true</auto-load>
+   </ndi>
+   ```
+
 ## Debugging
 
 If you want to more rapidly iterate on configuration, it can often be easier to disable the systemd launch, and start the server manually
