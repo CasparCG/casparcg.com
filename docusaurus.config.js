@@ -65,19 +65,13 @@ const config = {
             label: "Downloads",
           },
           {
-            type: "doc",
-            docId: "guides/index",
+            href: "https://github.com/casparcg/help/wiki",
+            label: "Wiki and Guides",
             position: "left",
-            label: "Guides",
           },
           {
             href: "https://casparcgforum.org",
             label: "Forum",
-            position: "left",
-          },
-          {
-            href: "https://github.com/casparcg/help/wiki",
-            label: "Wiki",
             position: "left",
           },
           // {
@@ -105,11 +99,7 @@ const config = {
                 to: "/docs/downloads/server-client",
               },
               {
-                label: "Guides",
-                to: "/docs/guides",
-              },
-              {
-                label: "Wiki",
+                label: "Wiki and Guides",
                 to: "https://github.com/casparcg/help/wiki",
               },
             ],
