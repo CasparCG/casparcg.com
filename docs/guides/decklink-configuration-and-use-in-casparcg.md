@@ -2,8 +2,6 @@
 title: Decklink configuration and use in CasparCG (or similar software)
 ---
 
-# Decklink card configuration for use in CasparCG (or similar software)
-
 **Important:** Applies to _Duo 2_ and _Quad 2_ card. Some other card models (newer than _Duo 2_/_Quad 2_) might have the same architecture, but anything older than _Duo 2_/_Quad 2_ will **not** work as described below.
 
 **In this document we will be using the _Decklink Quad 2_ as an example**, meaning we will describe having 8 configurable devices.
@@ -22,13 +20,13 @@ The software interfaces with the card through an abstraction named a `Device`. 
 
 The _Quad 2_ card has 8 devices, but only if they all are configured as "Single connector". Each of the 8 `single-connector devices` can be used by the software as either an input, or an output.
 
-![Illustration of Decklink Quad 2 setting for connectors](https://github.com/CasparCG/help/blob/master/wiki/asssets/screenshot%20connector%20selection.png)
+![Illustration of Decklink Quad 2 setting for connectors](./img/screenshot-connector-selection.png)
 
 The software addresses the device, and it is important to understand how the devices map to the physical SDI I/O. As the software will read the devices in their order, please observe how the physical SDI ordering is interleaved: SDI 1, 2, 3, 4, 5, 6, 7, 8 appears as devices 1, 5, 2, 6, 3, 7, 4, 8.
 
 > The illustration below shows how `SDI 1` appears as `device 1` to the software, but `SDI 2` appears as `device 5`.
 
-![Illustration of Decklink Quad 2 configured for 8 inputs or outputs](https://github.com/CasparCG/help/blob/master/wiki/asssets/Decklink%208%20devices,%20inputs%20or%20outputs.svg)
+![Illustration of Decklink Quad 2 configured for 8 inputs or outputs](./img/decklink-8-devices-inputs-or-outputs.svg)
 
 ### "Dual-connector devices"
 
@@ -36,7 +34,7 @@ The 8 devices actually consist of 4 pairs of 2 devices. The pairs are devices 1+
 
 Each of the devices 1, 2, 3, 4 can be set as "Dual-Connnector". Doing this consumes the associated devices (5, 6, 7, 8), which will disappear from the system, effectively stops the connectors being exposed in the software.
 
-![Illustration of Decklink Quad 2 setting for connectors SDI 1 & SDI 2](https://github.com/CasparCG/help/blob/master/wiki/asssets/screenshot%20connector%20selection%20dual.png)
+![Illustration of Decklink Quad 2 setting for connectors SDI 1 & SDI 2](./img/screenshot-connector-selection-dual.png)
 
 ## Outputs in CasparCG (single-connector)
 
@@ -55,9 +53,9 @@ Any device can be configured to be an output. A CasparCG channel can have multip
 
 In this example we'll assume this is the first `channel` tag in the config, which makes this `channel 1` for CasparCG. Adding `device 2` as a consumer means the channel will play on `SDI 3`, given that device 2 is set up with a single-connector in the first place.
 
-> **Note:** Consumers can also be added runtime through the AMCP [ADD](https://github.com/CasparCG/help/wiki/AMCP-Protocol#add) command.
+> **Note:** Consumers can also be added runtime through the AMCP [ADD](../wiki/protocols/amcp-protocol.md#add) command.
 
-> **Important:** As you will see with [Key+fill outputs](<https://github.com/CasparCG/help/wiki/Guide:-Decklink-configuration-and-use-in-CasparCG-(or-similar-software)#keyfill-outputs-in-casparcg-dual-connetor>), `device 2` will actually output on `SDI 4` when in a dual-connector mode, and `SDI 3` will then show the key-signal.
+> **Important:** As you will see with [Key+fill outputs](#keyfill-outputs-in-casparcg-dual-connetor), `device 2` will actually output on `SDI 4` when in a dual-connector mode, and `SDI 3` will then show the key-signal.
 
 ## Inputs in CasparCG (single-connector)
 
@@ -73,13 +71,13 @@ Example AMCP command:
 > - `Device 5` is not already being used as an output (consumer) by any software.
 > - Your input is connected to `SDI 2`.
 
-**Note:** `FORMAT` is optional in the `PLAY`-command, but can be used to play inputs of other video-formats that the channel is currently running on. For example `FORMAT 720p5000` on a channel with `<video-mode>1080i5000</video-mode>`. For more information, see the AMCP [PLAY](https://github.com/CasparCG/help/wiki/AMCP-Protocol#play) command.
+**Note:** `FORMAT` is optional in the `PLAY`-command, but can be used to play inputs of other video-formats that the channel is currently running on. For example `FORMAT 720p5000` on a channel with `<video-mode>1080i5000</video-mode>`. For more information, see the AMCP [PLAY](../wiki/protocols/amcp-protocol.md#play) command.
 
 **Note:** @todo: Add documentation on default producers in config once merged: [PR 1315](https://github.com/CasparCG/server/pull/1315)
 
 ## Key+Fill outputs in CasparCG (dual-connetor)
 
-Similar to [a single SDI output](https://github.com/CasparCG/help/wiki/Guide%3A-Decklink-configuration-and-use-in-CasparCG-%28or-similar-software%29#outputs-in-casparcg-single-connector), you can only address a single device in the consumer of a channel. Since CasparCG always operate with RGBA internally, you don't have to explicitly state that you want to produce a key+fill output. By setting the device as a dual-connector, it will work without any changes to the CasparCG config:
+Similar to [a single SDI output](#outputs-in-casparcg-single-connector), you can only address a single device in the consumer of a channel. Since CasparCG always operate with RGBA internally, you don't have to explicitly state that you want to produce a key+fill output. By setting the device as a dual-connector, it will work without any changes to the CasparCG config:
 
 ```xml
 <channel>
@@ -94,7 +92,7 @@ Similar to [a single SDI output](https://github.com/CasparCG/help/wiki/Guide%3A-
 
 > **Note:** In this example we have to make sure that `device 2` is set as a dual-connector ("SDI 3 & SDI 4"). This will give `key` on `SDI 3` and `fill` on `SDI 4`.
 
-![Illustration of Decklink Quad 2 configured for key+fill output](https://github.com/CasparCG/help/blob/master/wiki/asssets/Decklink%204%20devices,%20key+fill%20pairs.svg)
+![Illustration of Decklink Quad 2 configured for key+fill output](./img/decklink-4-devices-key-fill-pairs.svg)
 
 ## Internal keying in CasparCG (dual-connector)
 
@@ -120,12 +118,12 @@ Instead of outputing a key+fill pair to use for keying in a separate vision mixe
 > - The throughput signal can not be manipulated, only added to. To do DVE effects you need to capture the input to software, which adds latency accordingly (input + software + output). This also adds CPU/GPU load as the video will be processed by the software.
 > - Keying with the internal keyer is a "cheap" operation, as the CPU/GPU only has to produce the content that goes on top, and the keying is offloaded to be done by the Decklink hardware.
 
-![Illustration of Decklink Quad 2 configured for internal keying](<https://github.com/CasparCG/help/blob/master/wiki/asssets/Decklink%204%20devices,%20internal%20keyer%20(DSK).svg>)
+![Illustration of Decklink Quad 2 configured for internal keying](./img/decklink-4-devices-internal-keyer-dsk.svg)
 
 ## Example of a mixed configuration
 
 Finally, an illustration showing that all modes can be combined. The only limitation to keep in mind is that "dual devices" are limited to 1, 2, 3 and 4, and all "dual devices" consumes their respective device to pair with.
 
-![Illustration of Decklink Quad 2 configured for 2 inputs, 2 ouputs, 1 key+fill output and 1 internal keyer](https://github.com/CasparCG/help/blob/master/wiki/asssets/Decklink%20Example%201,%20mixed%20configuration.svg)
+![Illustration of Decklink Quad 2 configured for 2 inputs, 2 ouputs, 1 key+fill output and 1 internal keyer](./img/decklink-example-1-mixed-configuration.svg)
 
 > In this config CasparCG would use devices 1, 3, 4, 6 as outputs, and consume devices 2 and 8 as inputs.
