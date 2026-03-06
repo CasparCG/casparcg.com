@@ -3,7 +3,7 @@ title: Bluefish Consumer
 category: Consumers
 ---
 
-![](../../Images/Bluefish_Consumer.jpg)
+![](../../images/Bluefish_Consumer.jpg)
 
 Outputs the playing media on to video cards from Bluefish Technologies with full SDI support for all SD and HD resolutions, frame rates, pixel aspect ratios, including support for separate fill and key channels + audio.
 

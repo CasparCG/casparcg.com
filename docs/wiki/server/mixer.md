@@ -4,7 +4,7 @@ category: Server
 sidebar_position: 8
 ---
 
-![](../Images/Mixer.jpg)
+![](../images/Mixer.jpg)
 
 The Mixer module is where content from one (or several) producers is stacked, transformed and composited before being sent to one or several consumers.
 

@@ -20,7 +20,7 @@ _Note: this page is outdated and should not be used as a reference any longer. F
 
 Make sure you turn off Windows' Aero theme and ClearType font smoothing as they have been known to interfere with transparency in Flash templates, and can also cause problems with Vsync when outputting to computer screens.
 
-![](../Images/Adjust-for-best-performance.png)
+![](../images/Adjust-for-best-performance.png)
 
 ## System Recommendations
 
@@ -110,7 +110,7 @@ The current release of the CasparCG Server supports the Bluefish444 SDK from Blu
 
 All cards from Bluefish Technologies should be able to output separate fill and key to SDI.
 
-Please see the [table of supported video cards](Server:-Supported-Video-Hardware).
+Please see the [table of supported video cards](./supported-video-hardware.md).
 
 ##### Bluefish Card Configuration
 
@@ -122,7 +122,7 @@ When installing the driver, make sure you also install the ASIO driver and Symme
 
 #### BlackMagic Design / DeckLink
 
-Please see the [table of supported video cards](Server:-Supported-Video-Hardware).
+Please see the [table of supported video cards](./supported-video-hardware.md).
 
 The current release of the CasparCG Server's DeckLink Consumer uses the DeckLink SDK and should support all output cards from Blackmagic Design.
 

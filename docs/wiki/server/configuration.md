@@ -12,7 +12,7 @@ At the bottom of the `casparcg.config` file you will find comments which documen
 
 ## Paths Configuration
 
-![](../Images/RootFolder.png)
+![](../images/RootFolder.png)
 
 To tell the CasparCG Server where to look for media files, change the following paths in the configuration file.
 

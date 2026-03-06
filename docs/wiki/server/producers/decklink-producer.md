@@ -3,7 +3,7 @@ title: Decklink Producer
 category: Producers
 ---
 
-![](../../Images/DeckLink_Producer.jpg)
+![](../../images/DeckLink_Producer.jpg)
 
 The Decklink producer allows video sources to be input from BlackMagic Design cards and used as CasparCG Server layers so that CasparCG Server's Mixer can then be used to manipulate the layer. Note that the DeckLink Producer is separate from the DeckLink Consumer which can be used to output from Caspar as HD/SD SDI or HDMI.
 

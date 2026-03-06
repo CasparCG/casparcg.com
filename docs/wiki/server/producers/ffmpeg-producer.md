@@ -124,7 +124,7 @@ Example:
 PLAY 1-1 MOVIE FILTER hflip:yadif=0:0
 ```
 
-A complete list of filters and a description of their purpose can be found here [http://libav.org/libavfilter.html#Video-Filters](http://libav.org/libavfilter.html#Video-Filters)
+A complete list of filters and a description of their purpose can be found here [https://ffmpeg.org/ffmpeg-filters.html#Video-Filters](https://ffmpeg.org/ffmpeg-filters.html#Video-Filters)
 
 ## AMCP Functions
 

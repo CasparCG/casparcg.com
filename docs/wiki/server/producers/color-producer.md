@@ -3,7 +3,7 @@ title: Color Producer
 category: Producers
 ---
 
-![](../../Images/Color_Producer.jpg)
+![](../../images/Color_Producer.jpg)
 
 The Color Producer generates a solid RGB color as fill and a grayscale value as key. The purpose of the producer is mainly to be used as an output test.
 

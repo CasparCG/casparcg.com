@@ -4,7 +4,7 @@ category: Producers
 sidebar_position: 7
 ---
 
-![](../../Images/Producers.jpg)
+![](../../images/Producers.jpg)
 
 A producer is a CasparCG Server module for input and rendering of media content such as video, animations, images and audio. Each producer has different capabilities.
 

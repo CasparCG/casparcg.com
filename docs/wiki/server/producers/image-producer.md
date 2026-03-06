@@ -3,7 +3,7 @@ title: Image Producer
 category: Producers
 ---
 
-![](../../Images/Image_Producer.jpg)
+![](../../images/Image_Producer.jpg)
 
 The Image Producer displays bitmap images with and without alpha channel.
 

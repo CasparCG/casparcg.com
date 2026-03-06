@@ -28,6 +28,8 @@ This NDI source xyz can be viewed from OBS / vMix /Tricaster in NDI sources list
 
 CasparCG supported NDI only through the iVGA SDK before version 2.3
 
+_Note 2: links provided in this section are likely dead links due to their age_
+
 ### How to use iVGA
 
 - Install [NewTek Network Video Send.exe](http://new.tk/NetworkSendRedist).

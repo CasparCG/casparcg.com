@@ -3,7 +3,7 @@ title: Screen Consumer
 category: Consumers
 ---
 
-![](../../Images/Screen_Consumer.jpg)
+![](../../images/Screen_Consumer.jpg)
 
 The Screen Consumer outputs to either a window or fullscreen to one or several computer monitors attached directly to the hardware running the CasparCG Server software.
 

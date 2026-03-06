@@ -3,7 +3,7 @@ title: Decklink Consumer
 category: Consumers
 ---
 
-![](../../Images/DeckLink_Consumer.jpg)
+![](../../images/DeckLink_Consumer.jpg)
 
 Outputs the playing media on to DeckLink video cards with full SDI and/or HDMI support for SD and HD resolutions, frame rates, pixel aspect ratios, including support (depending on the card's capabilities) for separate fill and key output and embedded or separate audio.
 

@@ -2,11 +2,11 @@
 title: FFmpeg Consumer
 ---
 
-![](../../Images/Disk_Consumer.jpg)
+![](../../images/Disk_Consumer.jpg)
 
 The FFmpeg consumer forwards the output of a CasparCG channel to ffmpeg, to stream or record video.
 
-If you are familiar with FFmpeg, you will feel somewhat at home with the commands; the consumer tries to mimic the command-line arguments used by FFmpeg, see [1] for more options.
+If you are familiar with FFmpeg, you will feel somewhat at home with the commands; the consumer tries to mimic the command-line arguments used by FFmpeg.
 
 **Note**: Caspar will only take arguments in the -[parameter]:[stream] syntax. Use -codec:v, not -vcodec. Arguments not passed on by caspar to FFmpeg will yield an "Unused option" log message.
 
@@ -52,5 +52,3 @@ To stop the recording you simply type:
 ```
 REMOVE 1-1 FILE
 ```
-
-[1]: http://www.itbroadcastanddigitalcinema.com/ffmpeg_howto.html
