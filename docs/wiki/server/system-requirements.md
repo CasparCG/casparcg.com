@@ -118,7 +118,7 @@ The Bluefish Feature App that can be downloaded from Bluefish Technologies doesn
 
 When installing the driver, make sure you also install the ASIO driver and Symmetry.
 
-![](../Images/Bluefish_Driver_Install_A.png)
+![](../images/Bluefish_Driver_Install_A.png)
 
 #### BlackMagic Design / DeckLink
 
