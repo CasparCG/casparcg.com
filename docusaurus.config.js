@@ -1,9 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
- const {themes} = require('prism-react-renderer');
- const lightTheme = themes.github;
- const darkTheme = themes.dracula;
+const { themes } = require("prism-react-renderer");
+const lightTheme = themes.github;
+const darkTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -38,8 +38,7 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/casparcg/casparcg.com/tree/main/",
+          editUrl: "https://github.com/casparcg/casparcg.com/tree/main/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -71,13 +70,14 @@ const config = {
             label: "Guides",
           },
           {
-            href: "https://casparcgforum.org",
-            label: "Forum",
+            type: "doc",
+            docId: "wiki/index",
             position: "left",
+            label: "Wiki",
           },
           {
-            href: "https://github.com/casparcg/help/wiki",
-            label: "Wiki",
+            href: "https://casparcgforum.org",
+            label: "Forum",
             position: "left",
           },
           // {
@@ -110,7 +110,7 @@ const config = {
               },
               {
                 label: "Wiki",
-                to: "https://github.com/casparcg/help/wiki",
+                to: "/docs/wiki",
               },
             ],
           },
@@ -122,8 +122,8 @@ const config = {
                 href: "https://casparcgforum.org",
               },
               {
-                label: "Twitter",
-                href: "https://twitter.com/casparcg",
+                label: "X / Twitter",
+                href: "https://x.com/casparcg",
               },
               {
                 label: "Facebook",
