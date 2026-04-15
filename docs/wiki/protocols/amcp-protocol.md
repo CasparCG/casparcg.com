@@ -762,6 +762,7 @@ Parameters:
 
 ```
 >> MIXER 1-1 CHROMA 0
+>> MIXER 1-1 CHROMA
 << 202 MIXER OK
 << 1 120 0.1 0 0 0.1 0 1 0
 ```
