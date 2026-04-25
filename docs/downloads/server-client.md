@@ -28,3 +28,8 @@ A client software is needed in order to control one or several _CasparCG&nbsp;Se
 
 - [Releases (_Windows_, _macOS_, _Linux_)](https://github.com/SuperFlyTV/SuperConductor/releases/)
 - [Description and source code](https://github.com/SuperFlyTV/SuperConductor/)
+
+### _Bridge_
+
+- [Releases (_Windows_, _macOS_)](https://github.com/svt/bridge/releases)
+- [Description and source code](https://github.com/svt/bridge)
