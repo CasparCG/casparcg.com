@@ -86,6 +86,12 @@ You can download the setup program from [here][1] and the documentation from [he
 
 Open source, licensed under the Apache License.
 
+## Cuelio Studio - Playouts
+
+[Cuelio Studio](https://cuelio.studio/casparcg-sports-graphics.html) makes playout clients for live sport Events & Broadcast Graphics, with a separate edition for football, basketball, netball, rugby and boxing. Each edition keeps the score, clock and stats itself, comes with its own HTML templates, and plays them from keyboard shortcuts. Other operators can open the same panel in a browser on the local network.
+
+Commercial, not open source, with a 7-day free trial.
+
 ## FolderPlayout
 
 [Folderplayout](https://github.com/baltedewit/folderplayout) is a a 24/7 playout client based on hierarchical schedule. You can combine groups, folders, clips and live inputs and use dates, weeks, days and hours to schedule these. When nothing from the schedule is playing, an external input is played. For example an info channel.
